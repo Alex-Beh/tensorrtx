@@ -9,7 +9,12 @@ mkdir build
 cd build 
 cmake ..
 make
-./usb_camera
+```
+
+## How to run Yolov5trt inteference on video
+```shell
+cd build 
+./video_inteference_yolov5
 ```
 
 ## Notice

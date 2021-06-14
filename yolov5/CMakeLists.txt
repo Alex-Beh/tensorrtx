@@ -36,8 +36,8 @@ target_link_libraries(yolov5 ${OpenCV_LIBS})
 add_executable(usb_camera usb_camera.cpp)
 target_link_libraries(usb_camera opencv_core opencv_highgui opencv_imgproc opencv_imgcodecs)
 
-# add_executable(video_inteference_yolov5 video_inteference_yolov5.cpp)
-# target_link_libraries(video_inteference_yolov5 nvinfer cudart myplugins ${OpenCV_LIBS})
+add_executable(video_inteference_yolov5 video_inteference_yolov5.cpp)
+target_link_libraries(video_inteference_yolov5 nvinfer cudart myplugins ${OpenCV_LIBS})
 
 add_definitions(-O2 -pthread)
 
