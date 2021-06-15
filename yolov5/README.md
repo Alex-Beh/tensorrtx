@@ -2,6 +2,17 @@
 
 The Pytorch implementation is [ultralytics/yolov5](https://github.com/ultralytics/yolov5).
 
+## Yolov5 TensorRT Deployment with custom model
+```
+1. Remember to checkout the v5.0 branch in ultralytics/yolov5
+2. Train your custom model with pretrained weight
+    python train.py --img 640 --batch 16 --epochs 5 --data custom_model.yaml --weights yolov5l.pt
+2. Generate .wts from pytorch with .pt
+3. Copy the .wts file to wang-xinyu/tensorrtx
+4. Remember to update the Number of classes defined in yololayer.h
+5. Build the repo and generate the engine file with the following command:
+    sudo ./yolov5 -s custom_model.wts custom_model.engine l
+```
 ## Different versions of yolov5
 
 Currently, we support yolov5 v1.0(yolov5s only), v2.0, v3.0, v3.1, v4.0 and v5.0.
